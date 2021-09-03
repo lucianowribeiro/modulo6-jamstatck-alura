@@ -10,6 +10,9 @@
   },
   "scripts": {
     "site": "yarn workspace @lucianowribeiro/site",
-    "site:dev": "yarn workspace @lucianowribeiro/site dev"
+    "site:dev": "yarn site dev",
+    "ui": "yarn workspace @lucianowribeiro/ui",
+    "ui:start": "yarn ui start"
+    
   }
 }

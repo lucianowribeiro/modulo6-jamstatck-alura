@@ -1,6 +1,6 @@
 const withPlugins = require("next-compose-plugins");
 const withTM = require("next-transpile-modules")([
-  "@lucianowribeiro/modulo-comum",
+  "@lucianowribeiro/ui",
 ]);
 
 module.exports = withPlugins([withTM], {
