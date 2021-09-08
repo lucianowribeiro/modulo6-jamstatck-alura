@@ -11,8 +11,9 @@
   "scripts": {
     "site": "yarn workspace @lucianowribeiro/site",
     "site:dev": "yarn site dev",
+    "site:build": "yarn site build",
     "ui": "yarn workspace @lucianowribeiro/ui",
-    "ui:start": "yarn ui start"
-    
+    "ui:start": "yarn ui start",
+    "ui:build": "yarn ui build"
   }
 }
