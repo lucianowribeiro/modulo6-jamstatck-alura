@@ -1,24 +1,26 @@
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
 import Button from "./index";
 
-<Meta title="Components/Commons/Button" />
+<Meta title="Components/Commons/Button" component={Button}/>
 
 # Button
 
+<ArgsTable of={Button}/>
 ## Botao simples
 
-<Canvas> 
-  <Story name="Botao simples"
-  args={{children: 'Botao simples'}}
-  >
-    {(args)=> <Button {...args} />}
+<Canvas>
+  <Story name="Botao simples" args={{ children: "Botao simples" }}>
+    {(args) => <Button {...args} />}
   </Story>
 </Canvas>
 
 ## Botao Desabilitado
 
-<Canvas> 
-  <Story name="Botao desabilitado">
-    <Button disabled/>
+<Canvas>
+  <Story
+    name="Botao desabilitado"
+    args={{ children: "Botao desabilitado", disabled: true }}
+  >
+    {(args) => <Button {...args} />}
   </Story>
 </Canvas>
