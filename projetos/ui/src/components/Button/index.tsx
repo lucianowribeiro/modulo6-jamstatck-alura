@@ -1,5 +1,9 @@
 import React from "react";
 
-export default function Button() {
-  return <button>OLA MUNDO</button>;
+export default function Button({ disabled, children }) {
+  return (
+    <button disabled={disabled}>
+      {children}
+    </button>
+  )
 }
