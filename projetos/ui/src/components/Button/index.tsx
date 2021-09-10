@@ -1,32 +1,6 @@
-import get from "lodash/get";
 import React from "react";
-import styled from "styled-components";
-
-const ButtonWrapper = styled.button`
-  border: 0;
-  cursor: pointer;
-  padding: 12px 26px;
-  font-weight: bold;
-  opacity: 1;
-  border-radius: 8px;
-  color: ${({ theme, color, mode }) =>
-    get(theme, `${mode}.${color}.contrastText`)};
-  background: ${({ theme, color, mode }) =>
-    get(theme, `${mode}.${color}.color`)};
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.2;
-  }
-`;
-interface ButtonProps {
-  /**
-   * Prop que seleciona o tema padrao do botao
-   */
-  mode?: string;
-  /**
-   * Prop que seleciona que tipo de tema de cor o botao irá ter
-   */
-  color?: string;
+import { ButtonWrapper, ButtonWrapperProps } from "./style/ButtonWrapper";
+interface ButtonBaseProps {
   /**
    * Prop que desabilita o botao
    */
@@ -36,11 +10,13 @@ interface ButtonProps {
    */
   children: React.ReactNode;
 }
+
+type ButtonProps = ButtonBaseProps & ButtonWrapperProps;
 export default function Button({
-  disabled,
+  disabled = false,
   children,
-  color,
-  mode,
+  color = "primary.main",
+  mode = "light",
 }: ButtonProps) {
   return (
     <ButtonWrapper disabled={disabled} color={color} mode={mode}>
@@ -48,7 +24,3 @@ export default function Button({
     </ButtonWrapper>
   );
 }
-Button.defaultProps = {
-  color: "primary.main",
-  mode: "light",
-};
