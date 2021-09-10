@@ -6,6 +6,7 @@ import Button from "./index";
 # Button
 
 <ArgsTable of={Button}/>
+
 ## Botao simples
 
 <Canvas>
@@ -24,3 +25,24 @@ import Button from "./index";
     {(args) => <Button {...args} />}
   </Story>
 </Canvas>
+
+
+## Botao dark simples
+
+<Canvas>
+  <Story name="Botao dark simples" args={{ children: 'Botao dark simples' ,mode: 'dark'}}>
+    {(args) => <Button {...args} />}
+  </Story>
+</Canvas>
+
+## Botao dark Desabilitado
+
+<Canvas>
+  <Story
+    name="Botao dark desabilitado"
+    args={{ children: 'Botao dark desabilitado', disabled: true ,mode: 'dark'}}
+  >
+    {(args) => <Button {...args} />}
+  </Story>
+</Canvas>
+
